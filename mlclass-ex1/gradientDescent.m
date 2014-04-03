@@ -17,17 +17,16 @@ for iter = 1:num_iters
     %       of the cost function (computeCost) and gradient here.
     %
 
-
-
-
-
-
+    theta_temp = theta;
+    
+    theta(1) = theta_temp(1) - (alpha/m) * (X(:,1)' * (X*theta_temp - y)); 
+    theta(2) = theta_temp(2) - (alpha/m) * (X(:,2)' * (X*theta_temp - y));
 
     % ============================================================
 
     % Save the cost J in every iteration    
     J_history(iter) = computeCost(X, y, theta);
-
+    
 end
 
 end
